@@ -2,7 +2,7 @@
 
 ![](https://visitor-badge.laobi.icu/badge?page_id=acisseJZhong.acisseJZhong)
 
-I'm a software engineer at Meta passionate about ML infrastructure, large-scale model training, and LLM serving systems.
+I'm a software engineer passionate about ML infrastructure, large-scale model training, and LLM serving systems.
 
 - Working on PyTorch-based training and inference infrastructure
 - Contributing to open-source ML frameworks
@@ -30,13 +30,13 @@ I'm a software engineer at Meta passionate about ML infrastructure, large-scale 
 
 **Pinned Repositories:**
 
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="50%"><a href="https://github.com/meta-pytorch/torchtune"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=vue&description_lines_count=2" /></a></td>
-<td width="50%"><a href="https://github.com/pytorch/pytorch"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=vue&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/pytorch/torchtitan"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=default&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/pytorch/pytorch"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=default&description_lines_count=2" /></a></td>
 </tr>
 <tr>
-<td width="50%"><a href="https://github.com/vllm-project/vllm"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=vue&description_lines_count=2" /></a></td>
-<td width="50%"><a href="https://github.com/pytorch/torchtitan"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=vue&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/vllm-project/vllm"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=default&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/meta-pytorch/torchtune"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=default&description_lines_count=2" /></a></td>
 </tr>
 </table>
