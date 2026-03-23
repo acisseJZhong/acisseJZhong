@@ -30,7 +30,13 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 **Pinned Repositories:**
 
-[![torchtune](https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=vue)](https://github.com/meta-pytorch/torchtune)
-[![pytorch](https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=vue)](https://github.com/pytorch/pytorch)
-[![vllm](https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=vue)](https://github.com/vllm-project/vllm)
-[![torchtitan](https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=vue)](https://github.com/pytorch/torchtitan)
+<table>
+<tr>
+<td><a href="https://github.com/meta-pytorch/torchtune"><img src="https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=vue" /></a></td>
+<td><a href="https://github.com/pytorch/pytorch"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=vue" /></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/vllm-project/vllm"><img src="https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=vue" /></a></td>
+<td><a href="https://github.com/pytorch/torchtitan"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=vue" /></a></td>
+</tr>
+</table>
