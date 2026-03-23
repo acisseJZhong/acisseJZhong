@@ -32,11 +32,11 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 <table>
 <tr>
-<td><a href="https://github.com/meta-pytorch/torchtune"><img src="https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=vue" /></a></td>
-<td><a href="https://github.com/pytorch/pytorch"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=vue" /></a></td>
+<td width="50%"><a href="https://github.com/meta-pytorch/torchtune"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=meta-pytorch&repo=torchtune&theme=vue&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/pytorch/pytorch"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=pytorch&theme=vue&description_lines_count=2" /></a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/vllm-project/vllm"><img src="https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=vue" /></a></td>
-<td><a href="https://github.com/pytorch/torchtitan"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=vue" /></a></td>
+<td width="50%"><a href="https://github.com/vllm-project/vllm"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=vllm-project&repo=vllm&theme=vue&description_lines_count=2" /></a></td>
+<td width="50%"><a href="https://github.com/pytorch/torchtitan"><img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=pytorch&repo=torchtitan&theme=vue&description_lines_count=2" /></a></td>
 </tr>
 </table>
