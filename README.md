@@ -2,7 +2,7 @@
 
 ![](https://visitor-badge.laobi.icu/badge?page_id=acisseJZhong.acisseJZhong)
 
-I'm a software engineer passionate about ML infrastructure, large-scale model training, and LLM serving systems.
+I'm a software engineer passionate at Meta about ML infrastructure, large-scale model training, and LLM serving systems.
 
 - Working on PyTorch-based training and inference infrastructure
 - Contributing to open-source ML frameworks
