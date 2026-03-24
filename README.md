@@ -28,7 +28,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] enable qwen3 30B-A3B MoE to run RL e2e** — [RL] enable qwen3 30B-A3B MoE to run RL e2e |
+| 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e** — [RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e |
 | 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
 | 2026-03-18 | [#2625](https://github.com/pytorch/torchtitan/pull/2625) | **[Draft WIP] MoE with LocalMap** — [Draft WIP] MoE with LocalMap |
 | 2026-03-17 | [#2615](https://github.com/pytorch/torchtitan/pull/2615) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
@@ -79,6 +79,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-03-24 02:18 UTC_
+_Last updated: 2026-03-24 10:10 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
