@@ -28,6 +28,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] enable qwen3 30B-A3B MoE to run RL e2e** — [RL] enable qwen3 30B-A3B MoE to run RL e2e |
 | 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
 | 2026-03-18 | [#2625](https://github.com/pytorch/torchtitan/pull/2625) | **[Draft WIP] MoE with LocalMap** — [Draft WIP] MoE with LocalMap |
 | 2026-03-17 | [#2615](https://github.com/pytorch/torchtitan/pull/2615) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
@@ -35,7 +36,8 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2026-03-13 | [#2571](https://github.com/pytorch/torchtitan/pull/2571) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
 | 2026-03-13 | [#2567](https://github.com/pytorch/torchtitan/pull/2567) | **[rl] Refactor Episode definition to be a single completion instead of a group (#2529)** — Previously we use `Episode` to represent a group of completion in |
 | 2026-03-11 | [#2557](https://github.com/pytorch/torchtitan/pull/2557) | **Adopt Local Map Wrapper for Inner Attention** — Add _InnerAttentionBase base class to attention.py — overrides `__call__` to wrap `nn.Module.__call__` with local_map, converting TP DTensor inputs to |
-| 2026-03-09 | [#2532](https://github.com/pytorch/torchtitan/pull/2532) | **[DTensor Bugfix] Explicitly specify grad_placements in to_local to ensure necessary all reduce takes place** — Solved #2217 by @alpemreacar |
+
+[View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
 #### [pytorch/pytorch](https://github.com/pytorch/pytorch)
 
@@ -50,11 +52,15 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2025-12-13 | [#170355](https://github.com/pytorch/pytorch/pull/170355) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 | 2025-12-11 | [#170147](https://github.com/pytorch/pytorch/pull/170147) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 
+[View all my PRs in pytorch/pytorch &rarr;](https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3AacisseJZhong)
+
 #### [vllm-project/vllm](https://github.com/vllm-project/vllm)
 
 | Date | PR | Summary |
 |------|-----|---------|
 | 2025-09-29 | [#25912](https://github.com/vllm-project/vllm/pull/25912) | **[BugFix] Pass config_format via try_get_generation_config** — Fixed a bug when using customized config parser: we need to pass in `self.config_format`. |
+
+[View all my PRs in vllm-project/vllm &rarr;](https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3AacisseJZhong)
 
 #### [meta-pytorch/torchtune](https://github.com/meta-pytorch/torchtune)
 
@@ -71,6 +77,8 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2025-01-13 | [#2259](https://github.com/meta-pytorch/torchtune/pull/2259) | **Downgrade cuda to 12.4** — What is the purpose of this PR? Is it to |
 | 2025-01-10 | [#2245](https://github.com/meta-pytorch/torchtune/pull/2245) | **Added Distributed(Tensor Parallel) Inference Recipe** — What is the purpose of this PR? Is it to |
 
-_Last updated: 2026-03-23 23:42 UTC_
+[View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
+
+_Last updated: 2026-03-24 02:18 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
