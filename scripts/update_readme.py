@@ -131,6 +131,9 @@ def generate_pr_section():
                 f"| {pr['date']} | [#{pr['number']}]({pr['url']}) | **{pr['title']}** — {summary} |"
             )
         lines.append("")
+        all_prs_url = f"https://github.com/{owner}/{repo}/pulls?q=is%3Apr+author%3A{USERNAME}"
+        lines.append(f"[View all my PRs in {owner}/{repo} &rarr;]({all_prs_url})")
+        lines.append("")
 
     lines.append(f"_Last updated: {now}_")
     return "\n".join(lines)
