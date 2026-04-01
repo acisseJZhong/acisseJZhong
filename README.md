@@ -28,14 +28,15 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
+| 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
+| 2026-03-31 | [#2768](https://github.com/pytorch/torchtitan/pull/2768) | **[WIP] Moe router rewrite** — [WIP] Moe router rewrite |
 | 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e** — [RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e |
 | 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
 | 2026-03-18 | [#2625](https://github.com/pytorch/torchtitan/pull/2625) | **[Draft WIP] MoE with LocalMap** — [Draft WIP] MoE with LocalMap |
 | 2026-03-17 | [#2615](https://github.com/pytorch/torchtitan/pull/2615) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
 | 2026-03-17 | [#2613](https://github.com/pytorch/torchtitan/pull/2613) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
 | 2026-03-13 | [#2571](https://github.com/pytorch/torchtitan/pull/2571) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
-| 2026-03-13 | [#2567](https://github.com/pytorch/torchtitan/pull/2567) | **[rl] Refactor Episode definition to be a single completion instead of a group (#2529)** — Previously we use `Episode` to represent a group of completion in |
-| 2026-03-11 | [#2557](https://github.com/pytorch/torchtitan/pull/2557) | **Adopt Local Map Wrapper for Inner Attention** — Add _InnerAttentionBase base class to attention.py — overrides `__call__` to wrap `nn.Module.__call__` with local_map, converting TP DTensor inputs to |
 
 [View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -79,6 +80,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-03-31 10:14 UTC_
+_Last updated: 2026-04-01 10:17 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
