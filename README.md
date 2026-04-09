@@ -28,7 +28,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce LocalTokenDispatcher (EP=1), TokenDispatcher (EP>1), DeepEPTokenDispatcher in a new `token_dispatcher.py` that unify token reordering, scori |
+| 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce LocalTokenDispatcher (EP=1), TokenDispatcher (EP>1), DeepEPTokenDispatcher, TorchAoTokenDispatcher in a new `token_dispatcher.py` that unify |
 | 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
 | 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
 | 2026-03-31 | [#2768](https://github.com/pytorch/torchtitan/pull/2768) | **[WIP] Moe router rewrite** — [WIP] Moe router rewrite |
@@ -80,6 +80,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-08 10:18 UTC_
+_Last updated: 2026-04-09 10:35 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
