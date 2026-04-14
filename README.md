@@ -28,7 +28,8 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce LocalTokenDispatcher (EP=1), TokenDispatcher (EP>1), DeepEPTokenDispatcher, TorchAoTokenDispatcher in a new `token_dispatcher.py` that unify |
+| 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Remove the `apply_ep()` call from `Trainer.__post_init__` and move EP-aware token dispatcher configuration to model config time. |
+| 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce a token dispatcher abstraction (`token_dispatcher.py`) that encapsulates the full token routing lifecycle — dispatch (reorder + optional EP |
 | 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
 | 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
 | 2026-03-31 | [#2768](https://github.com/pytorch/torchtitan/pull/2768) | **[WIP] Moe router rewrite** — [WIP] Moe router rewrite |
@@ -36,7 +37,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
 | 2026-03-18 | [#2625](https://github.com/pytorch/torchtitan/pull/2625) | **[Draft WIP] MoE with LocalMap** — [Draft WIP] MoE with LocalMap |
 | 2026-03-17 | [#2615](https://github.com/pytorch/torchtitan/pull/2615) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
-| 2026-03-17 | [#2613](https://github.com/pytorch/torchtitan/pull/2613) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
 
 [View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -80,6 +80,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-13 10:56 UTC_
+_Last updated: 2026-04-14 10:40 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
