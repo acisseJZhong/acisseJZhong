@@ -28,7 +28,8 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Remove the `apply_ep()` call from `Trainer.__post_init__` and move EP-aware token dispatcher configuration to model config time. |
+| 2026-04-15 | [#2978](https://github.com/pytorch/torchtitan/pull/2978) | **re-enable compile tests** — re-enable compile tests |
+| 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Move EP-aware token dispatcher setup from runtime (`apply_ep()` in `Trainer.__post_init__`) to config time (`model_registry(moe_comm_backend=...)`), s |
 | 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce a token dispatcher abstraction (`token_dispatcher.py`) that encapsulates the full token routing lifecycle — dispatch (reorder + optional EP |
 | 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
 | 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
@@ -80,6 +81,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-14 10:40 UTC_
+_Last updated: 2026-04-15 10:39 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
