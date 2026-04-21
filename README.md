@@ -28,6 +28,8 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-04-20 | [#3037](https://github.com/pytorch/torchtitan/pull/3037) | **[MoE][3/n]swap to torchao dispatcher and set pad_multiple during config time** — Move `pad_multiple` from runtime assignment to config time, and have quantization converters handle `TorchAOTokenDispatcher` selection. |
+| 2026-04-20 | [#3032](https://github.com/pytorch/torchtitan/pull/3032) | **quantize on config instead of on model** — Apply quantization at model config construction time instead of post-build model mutation. |
 | 2026-04-15 | [#2978](https://github.com/pytorch/torchtitan/pull/2978) | **re-enable compile tests** — re-enable compile tests |
 | 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Move EP-aware token dispatcher setup from runtime (`apply_ep()` in `Trainer.__post_init__`) to config time (`model_registry(moe_comm_backend=...)`), s |
 | 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce a token dispatcher abstraction (`token_dispatcher.py`) that encapsulates the full token routing lifecycle — dispatch (reorder + optional EP |
@@ -36,8 +38,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2026-03-31 | [#2768](https://github.com/pytorch/torchtitan/pull/2768) | **[WIP] Moe router rewrite** — [WIP] Moe router rewrite |
 | 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e** — [RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e |
 | 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
-| 2026-03-18 | [#2625](https://github.com/pytorch/torchtitan/pull/2625) | **[Draft WIP] MoE with LocalMap** — [Draft WIP] MoE with LocalMap |
-| 2026-03-17 | [#2615](https://github.com/pytorch/torchtitan/pull/2615) | **[Module] Modularize MoE components** — GroupedExperts inherits from Module with a nested Config dataclass. dim, hidden_dim, and num_experts use field(init=False) so they are set at build() |
 
 [View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -81,6 +81,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-20 10:58 UTC_
+_Last updated: 2026-04-21 10:45 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
