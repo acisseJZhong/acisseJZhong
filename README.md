@@ -28,16 +28,16 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-04-28 | [#3127](https://github.com/pytorch/torchtitan/pull/3127) | **quantize on config instead of on model** — Continuation of #3032 (accidentally merged to wrong base branch). See #3032 for full description. |
+| 2026-04-28 | [#3125](https://github.com/pytorch/torchtitan/pull/3125) | **[MoE][3/n] consolidate EP=1 and EP>1 to all use All2AllTokenDispatcher** — Unify EP=1 and EP>1 token dispatching by making `AllToAllTokenDispatcher` fall back to `LocalTokenDispatcher` behavior when `ep_mesh is None`. |
 | 2026-04-20 | [#3037](https://github.com/pytorch/torchtitan/pull/3037) | **[MoE][3/n]swap to torchao dispatcher and set pad_multiple during config time** — Move `pad_multiple` from runtime assignment to config time, and have quantization converters handle `TorchAOTokenDispatcher` selection. |
 | 2026-04-20 | [#3032](https://github.com/pytorch/torchtitan/pull/3032) | **quantize on config instead of on model** — Apply quantization at model config construction time by swapping config types, instead of post-build model mutation. |
 | 2026-04-15 | [#2978](https://github.com/pytorch/torchtitan/pull/2978) | **re-enable compile tests** — re-enable compile tests |
 | 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Move EP-aware token dispatcher setup from runtime (`apply_ep()` in `Trainer.__post_init__`) to config time (`model_registry(moe_comm_backend=...)`), s |
 | 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce a token dispatcher abstraction (`token_dispatcher.py`) that encapsulates the full token routing lifecycle — dispatch (reorder + optional EP |
 | 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
-| 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
 | 2026-03-31 | [#2768](https://github.com/pytorch/torchtitan/pull/2768) | **[WIP] Moe router rewrite** — [WIP] Moe router rewrite |
 | 2026-03-24 | [#2680](https://github.com/pytorch/torchtitan/pull/2680) | **[RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e** — [RL] Add parallelism plan for qwen3 30B-A3B MoE to run e2e |
-| 2026-03-20 | [#2638](https://github.com/pytorch/torchtitan/pull/2638) | **[RL] adopt local map attention for vLLM attention** — Adopt LocalMapAttention as the base class for VLLMAttention, replacing manual DTensor.to_local() / DTensor.from_local() with local_map for DTensor-to- |
 
 [View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -46,12 +46,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | Date | PR | Summary |
 |------|-----|---------|
 | 2026-02-26 | [#175867](https://github.com/pytorch/pytorch/pull/175867) | **[DTensor] Add grad_placement to from_local** — While fixing a MoE numerics bug (pytorch/torchtitan#2416), we discovered the root cause was a lack of strict gradient placement control/strict typing |
-| 2026-01-27 | [#173454](https://github.com/pytorch/pytorch/pull/173454) | **[DTensor] Fix `to_local` backward by providing default `grad_placement` type** — Fixes #172932, see comment here |
-| 2026-01-23 | [#173153](https://github.com/pytorch/pytorch/pull/173153) | **[DTensor][BE] redistribute to replicate in from_local backward for partial target type** — follow up per this comment |
 | 2025-12-16 | [#170527](https://github.com/pytorch/pytorch/pull/170527) | **[DTensor] Provide user control of output gradients placements** — As discussed in https://github.com/pytorch/pytorch/pull/170147(see comment here and here), we added a parameter `grad_placements` to `from_local` and |
-| 2025-12-15 | [#170423](https://github.com/pytorch/pytorch/pull/170423) | **[BE] Rename MaskPartial back to _MaskPartial** — `MaskPartial` was made to a public class in https://github.com/pytorch/pytorch/pull/164414, this PR changes it back to a private class, as this class |
-| 2025-12-13 | [#170356](https://github.com/pytorch/pytorch/pull/170356) | **make redistribute bwd no-op if fwd is no-op** — make redistribute bwd no-op if fwd is no-op |
-| 2025-12-13 | [#170355](https://github.com/pytorch/pytorch/pull/170355) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 | 2025-12-11 | [#170147](https://github.com/pytorch/pytorch/pull/170147) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 
 [View all my PRs in pytorch/pytorch &rarr;](https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3AacisseJZhong)
@@ -68,19 +63,14 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2025-02-10 | [#2377](https://github.com/meta-pytorch/torchtune/pull/2377) | **Fix Qwen config** — What is the purpose of this PR? Is it to |
 | 2025-02-07 | [#2362](https://github.com/meta-pytorch/torchtune/pull/2362) | **[Fix Test] Fix failed generation test by pining pytorch nightlies** — What is the purpose of this PR? Is it to |
-| 2025-02-06 | [#2351](https://github.com/meta-pytorch/torchtune/pull/2351) | **Fix saving adapter weights after disabling DSD** — What is the purpose of this PR? Is it to |
-| 2025-02-05 | [#2346](https://github.com/meta-pytorch/torchtune/pull/2346) | **[Bug Fix]Disable DSD for saving ckpt** — What is the purpose of this PR? Is it to |
 | 2025-02-02 | [#2330](https://github.com/meta-pytorch/torchtune/pull/2330) | **TP + FSDP distributed training (full finetuning)** — What is the purpose of this PR? Is it to |
 | 2025-02-01 | [#2328](https://github.com/meta-pytorch/torchtune/pull/2328) | **Add distributed inference for llama3.2 vision** — What is the purpose of this PR? Is it to |
-| 2025-01-29 | [#2317](https://github.com/meta-pytorch/torchtune/pull/2317) | **fix state dict hook for early fusion models** — What is the purpose of this PR? Is it to |
 | 2025-01-13 | [#2260](https://github.com/meta-pytorch/torchtune/pull/2260) | **Fix tests due to upgrade to cuda126** — What is the purpose of this PR? Is it to |
 | 2025-01-13 | [#2259](https://github.com/meta-pytorch/torchtune/pull/2259) | **Downgrade cuda to 12.4** — What is the purpose of this PR? Is it to |
-| 2025-01-10 | [#2245](https://github.com/meta-pytorch/torchtune/pull/2245) | **Added Distributed(Tensor Parallel) Inference Recipe** — What is the purpose of this PR? Is it to |
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-27 11:18 UTC_
+_Last updated: 2026-04-28 11:18 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
