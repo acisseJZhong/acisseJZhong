@@ -46,7 +46,10 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | Date | PR | Summary |
 |------|-----|---------|
 | 2026-02-26 | [#175867](https://github.com/pytorch/pytorch/pull/175867) | **[DTensor] Add grad_placement to from_local** — While fixing a MoE numerics bug (pytorch/torchtitan#2416), we discovered the root cause was a lack of strict gradient placement control/strict typing |
+| 2026-01-23 | [#173153](https://github.com/pytorch/pytorch/pull/173153) | **[DTensor][BE] redistribute to replicate in from_local backward for partial target type** — follow up per this comment |
 | 2025-12-16 | [#170527](https://github.com/pytorch/pytorch/pull/170527) | **[DTensor] Provide user control of output gradients placements** — As discussed in https://github.com/pytorch/pytorch/pull/170147(see comment here and here), we added a parameter `grad_placements` to `from_local` and |
+| 2025-12-13 | [#170356](https://github.com/pytorch/pytorch/pull/170356) | **make redistribute bwd no-op if fwd is no-op** — make redistribute bwd no-op if fwd is no-op |
+| 2025-12-13 | [#170355](https://github.com/pytorch/pytorch/pull/170355) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 | 2025-12-11 | [#170147](https://github.com/pytorch/pytorch/pull/170147) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 
 [View all my PRs in pytorch/pytorch &rarr;](https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3AacisseJZhong)
@@ -71,6 +74,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-28 11:18 UTC_
+_Last updated: 2026-04-29 11:04 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
