@@ -28,6 +28,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-05-01 | [#3192](https://github.com/pytorch/torchtitan/pull/3192) | **[MoE] Move shared_experts out of combine() for clean DTensor boundaries** — Move shared_experts computation from inside TokenDispatcher.combine() |
 | 2026-04-29 | [#3167](https://github.com/pytorch/torchtitan/pull/3167) | **[MoE][4/n] deprecate expert tensor parallel (ETP)** — Removes expert tensor parallelism (ETP). With the trend toward fine-grained experts, sharding already-skinny expert weights with TP is impractical — t |
 | 2026-04-28 | [#3127](https://github.com/pytorch/torchtitan/pull/3127) | **quantize on config instead of on model** — Continuation of #3032 (accidentally merged to wrong base branch). See #3032 for full description. |
 | 2026-04-28 | [#3125](https://github.com/pytorch/torchtitan/pull/3125) | **[MoE][3/n] consolidate EP=1 and EP>1 to all use All2AllTokenDispatcher** — Unify EP=1 and EP>1 token dispatching by making `AllToAllTokenDispatcher` fall back to `LocalTokenDispatcher` behavior when `ep_mesh is None`. |
@@ -37,7 +38,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2026-04-14 | [#2960](https://github.com/pytorch/torchtitan/pull/2960) | **[MoE][2/n]Move EP setup from trainer to config registry and add model_registry params** — Move EP-aware token dispatcher setup from runtime (`apply_ep()` in `Trainer.__post_init__`) to config time (`model_registry(moe_comm_backend=...)`), s |
 | 2026-04-04 | [#2842](https://github.com/pytorch/torchtitan/pull/2842) | **[MoE][1/n] Introduce token dispatcher and replace token reorderer** — Introduce a token dispatcher abstraction (`token_dispatcher.py`) that encapsulates the full token routing lifecycle — dispatch (reorder + optional EP |
 | 2026-04-01 | [#2775](https://github.com/pytorch/torchtitan/pull/2775) | **[MoE] change torch.bmm back to scatter add** — scatter_add was replaced by torch.bmm in https://github.com/pytorch/torchtitan/pull/1974 due to its non determinism. However, bmm backward kernel was |
-| 2026-03-31 | [#2770](https://github.com/pytorch/torchtitan/pull/2770) | **[MoE Rewrite 1/n] Use local map for torch.histc and torch.gather, and use DTensor for router** — Refactored MoE router to run natively in DTensor (Replicate on TP mesh) instead of converting to local tensors before routing. Distribute_module autom |
 
 [View all my PRs in pytorch/torchtitan &rarr;](https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -81,6 +81,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-04-30 11:07 UTC_
+_Last updated: 2026-05-01 10:43 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
