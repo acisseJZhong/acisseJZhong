@@ -45,6 +45,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
+| 2026-05-13 | [#183517](https://github.com/pytorch/pytorch/pull/183517) | **[DTensor] Fix _StridedShard flag conflict during gradient accumulation** — Fix `use_strided_shard_as_shard_order` flag conflict in `_propagate_use_strided_shard_flag` by preferring `True` instead of raising `ValueError` when |
 | 2026-02-26 | [#175867](https://github.com/pytorch/pytorch/pull/175867) | **[DTensor] Add grad_placement to from_local** — While fixing a MoE numerics bug (pytorch/torchtitan#2416), we discovered the root cause was a lack of strict gradient placement control/strict typing |
 | 2026-01-27 | [#173454](https://github.com/pytorch/pytorch/pull/173454) | **[DTensor] Fix `to_local` backward by providing default `grad_placement` type** — Fixes #172932, see comment here |
 | 2026-01-23 | [#173153](https://github.com/pytorch/pytorch/pull/173153) | **[DTensor][BE] redistribute to replicate in from_local backward for partial target type** — follow up per this comment |
@@ -52,7 +53,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 | 2025-12-15 | [#170423](https://github.com/pytorch/pytorch/pull/170423) | **[BE] Rename MaskPartial back to _MaskPartial** — `MaskPartial` was made to a public class in https://github.com/pytorch/pytorch/pull/164414, this PR changes it back to a private class, as this class |
 | 2025-12-13 | [#170356](https://github.com/pytorch/pytorch/pull/170356) | **make redistribute bwd no-op if fwd is no-op** — make redistribute bwd no-op if fwd is no-op |
 | 2025-12-13 | [#170355](https://github.com/pytorch/pytorch/pull/170355) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
-| 2025-12-11 | [#170147](https://github.com/pytorch/pytorch/pull/170147) | **[DTensor][BE] remove is_backward from redistribute_local_tensor** — 1. remove the `is_backward` parameter from `redistribute_local_tensor`, instead, do the backward conversion before we call `redistribute_local_tensor` |
 
 [View all my PRs in pytorch/pytorch &rarr;](https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3AacisseJZhong)
 
@@ -81,6 +81,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-05-12 11:27 UTC_
+_Last updated: 2026-05-13 11:37 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
