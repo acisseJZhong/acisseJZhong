@@ -28,7 +28,7 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 | Date | PR | Summary |
 |------|-----|---------|
-| 2026-05-01 | [#3192](https://github.com/pytorch/torchtitan/pull/3192) | **[MoE] Refactor MoE to clean DTensor boundaries for shared/routed experts** — Move shared_experts computation and scatter_add from inside TokenDispatcher.combine() to MoE.forward(), establishing clean DTensor boundaries: |
+| 2026-05-01 | [#3192](https://github.com/pytorch/torchtitan/pull/3192) | **[MoE][5/n] Refactor MoE to clean DTensor boundaries for shared/routed experts** — Refactor MoE parallelization to establish clean DTensor boundaries: - **Router**: gate weights Replicate, input all-gathered to Replicate (via `NoPara |
 | 2026-04-29 | [#3167](https://github.com/pytorch/torchtitan/pull/3167) | **[MoE][4/n] deprecate expert tensor parallel (ETP)** — Removes expert tensor parallelism (ETP). With the trend toward fine-grained experts, sharding already-skinny expert weights with TP is impractical — t |
 | 2026-04-28 | [#3127](https://github.com/pytorch/torchtitan/pull/3127) | **quantize on config instead of on model** — Continuation of #3032 (accidentally merged to wrong base branch). See #3032 for full description. |
 | 2026-04-28 | [#3125](https://github.com/pytorch/torchtitan/pull/3125) | **[MoE][3/n] consolidate EP=1 and EP>1 to all use All2AllTokenDispatcher** — Unify EP=1 and EP>1 token dispatching by making `AllToAllTokenDispatcher` fall back to `LocalTokenDispatcher` behavior when `ep_mesh is None`. |
@@ -81,6 +81,6 @@ I'm a software engineer passionate about ML infrastructure, large-scale model tr
 
 [View all my PRs in meta-pytorch/torchtune &rarr;](https://github.com/meta-pytorch/torchtune/pulls?q=is%3Apr+author%3AacisseJZhong)
 
-_Last updated: 2026-05-13 11:37 UTC_
+_Last updated: 2026-05-14 11:21 UTC_
 <!-- RECENT_CONTRIBUTIONS_END -->
 
